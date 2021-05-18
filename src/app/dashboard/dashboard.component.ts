@@ -9,11 +9,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DashboardComponent implements OnInit {
 
-  cards: Array<any>;
+  cards: Array<any>;  
+  skillLoading: boolean = false;
 
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit() {
-    this.httpClient.get('/api/skills').subscribe((ret: Array<any>) => this.cards = ret);
-  }
+    this.skillLoading = true;
+    this.httpClient.get('/api/skills').subscribe((ret: Array<any>) => {this.cards = ret; this.skillLoading = false;
+  });
+  }  
 }

@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+import { environment } from 'src/environments/environment';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppComponent } from './app.component';
 import { CardComponent } from './dashboard/card/card.component';
@@ -16,8 +17,29 @@ import { HelloComponent } from './hello.component';
 import { HeaderComponent } from './dashboard/header/header.component';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, BrowserAnimationsModule, MatButtonModule, MatToolbarModule, FlexLayoutModule, MatChipsModule, MatCardModule, HttpClientModule, InMemoryWebApiModule.forRoot(FakeApiService, {delay: 3000})],
-  declarations: [ AppComponent, HelloComponent, DashboardComponent, CardComponent, HeaderComponent ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatToolbarModule,
+    FlexLayoutModule,
+    MatChipsModule,
+    MatCardModule,
+    HttpClientModule,
+    environment.production ?
+    [] : InMemoryWebApiModule.forRoot(FakeApiService, {delay: 3000})
+  ],
+
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    DashboardComponent,
+    CardComponent,
+    HeaderComponent
+  ],
+
   bootstrap:    [ AppComponent ]
 })
+
 export class AppModule { }

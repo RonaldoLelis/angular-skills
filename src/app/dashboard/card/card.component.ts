@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Inject } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -16,8 +16,8 @@ export class CardComponent implements OnInit {
 
   onLike(card: any){
     // TODO: incrementar o like, salvar via rest
-    this.card.likes++;
-    this.httpClient.put(`api/skills/${card.id}`, card).subscribe();    
+    this.card.likes++; 
+    this.httpClient.put(`api/skills/${card.id}`, card).subscribe()
     //console.log('likes: ' + this.card.likes);
     //console.log('id: ' + this.card.id);
   }
