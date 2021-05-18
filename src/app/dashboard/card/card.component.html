@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row my-4">
+    <div class="col">
+        <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm d-flex">
+                <div class="card card-box flex-fill">
+                    <div class="card-thumbnail flex-fill">
+                        <img [src]="card.pic" class="img-fluid" alt="">
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-8 title">
+                        <h3><a class="mt-5 text-danger"> {{ card.name }} </a></h3>
+                      </div>  
+                        <div class="col-4 like">
+                          <button mat-button (click)="onLike(card)"> 
+                            <i class="material-icons" *ngIf="card.likes <= 4">
+                              favorite_border
+                            </i> 
+                            <i class="material-icons" [ngClass]="mudaCor()" *ngIf="card.likes >= 5">
+                              favorite
+                            </i> 
+                            <span> {{ card.likes }}</span>
+                          </button>
+                        </div>
+                    </div>
+                    <p class="text-secondary"> {{ card.description }} </p><br /> 
+                    <div class="btn btn-sm btn-danger">                
+                      <a (click)="onShare()" class="">SHARE</a>
+                    </div>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

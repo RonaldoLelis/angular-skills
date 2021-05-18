@@ -1,0 +1,33 @@
+/* Add application styles & imports to this file! */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+*{
+  margin: 0;
+  padding: 0;
+}
+.v-middle{
+    vertical-align: middle;
+}
+.mat-card-skills {
+  max-width: 400px;
+  border: 1px solid #929090;
+  border-radius: 8px;
+  padding-top: 20px;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%;
+  margin: 10px;
+}
+.my-style-grey{
+  color: grey;
+}
+.my-style-blue{
+  color: blue;
+}
+.my-style-red{
+  color: red;
+}
+button{
+  color: grey;
+}
